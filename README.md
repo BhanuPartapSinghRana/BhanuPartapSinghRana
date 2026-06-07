@@ -125,14 +125,6 @@ print(me.greet())
 
 ---
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=BhanuPartapSinghRana&theme=darkhub&no-frame=false&no-bg=true&margin-w=4&column=7" alt="Trophies"/>
-</div>
-
----
-
 ## 🌐 NetVision-SOC — Flagship Project
 
 <div align="center">
