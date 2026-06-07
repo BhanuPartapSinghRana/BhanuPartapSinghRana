@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bhanu Partap Singh Rana | Cybersecurity Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--bg2:#0d1117;--cyan:#00d4ff;--purple:#7928ca;--red:#ee0000;--white:#f0f6fc;--gray:#8b949e}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden}
+canvas{position:fixed;top:0;left:0;z-index:0;opacity:.35}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,10,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,212,255,.15);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Fira Code',monospace;color:var(--cyan);font-size:1.1rem;font-weight:600}
+.nav-links a{color:var(--gray);text-decoration:none;margin-left:2rem;font-size:.9rem;transition:.3s}
+.nav-links a:hover{color:var(--cyan)}
+section{position:relative;z-index:1}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem}
+.hero-tag{display:inline-block;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--cyan);padding:.4rem 1.2rem;border-radius:100px;font-size:.85rem;font-family:'Fira Code',monospace;margin-bottom:1.5rem}
+#hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem}
+.grad{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#hero p{color:var(--gray);font-size:1.15rem;max-width:600px;margin:0 auto 2.5rem;line-height:1.7}
+.certs-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.cert-pill{display:flex;align-items:center;gap:.5rem;padding:.5rem 1.2rem;border-radius:100px;font-size:.82rem;font-weight:600;letter-spacing:.03em}
+.cert-rhcsa{background:rgba(238,0,0,.15);border:1px solid rgba(238,0,0,.5);color:#ff4444}
+.cert-ccna{background:rgba(27,160,215,.15);border:1px solid rgba(27,160,215,.5);color:#1ba0d7}
+.btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.8rem 2rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.35)}
+.btn-outline{background:transparent;border:1px solid rgba(0,212,255,.4);color:var(--cyan)}
+.btn-outline:hover{background:rgba(0,212,255,.1);transform:translateY(-2px)}
+/* SECTIONS */
+.section-inner{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:.5rem}
+.section-sub{color:var(--gray);margin-bottom:3rem;font-size:.95rem}
+.accent{color:var(--cyan)}
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-text p{color:var(--gray);line-height:1.8;margin-bottom:1rem}
+.code-block{background:#0d1117;border:1px solid rgba(0,212,255,.2);border-radius:12px;padding:1.5rem;font-family:'Fira Code',monospace;font-size:.82rem;line-height:1.8;color:var(--gray)}
+.code-block .kw{color:#ff79c6}.code-block .str{color:#f1fa8c}.code-block .fn{color:var(--cyan)}.code-block .cm{color:#6272a4}
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+.skill-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.5rem;transition:.3s}
+.skill-card:hover{border-color:var(--cyan);background:rgba(0,212,255,.05);transform:translateY(-4px)}
+.skill-icon{font-size:2rem;margin-bottom:.75rem}
+.skill-card h3{font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+.skill-card p{color:var(--gray);font-size:.82rem;line-height:1.6}
+/* PROJECTS */
+#projects{background:var(--bg2)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.project-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.75rem;transition:.3s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));transform:scaleX(0);transition:.3s;transform-origin:left}
+.project-card:hover::before{transform:scaleX(1)}
+.project-card:hover{border-color:rgba(0,212,255,.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+.project-card h3{font-size:1.05rem;font-weight:700}
+.stars{background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--cyan);padding:.2rem .6rem;border-radius:100px;font-size:.78rem;font-weight:600}
+.project-card p{color:var(--gray);font-size:.87rem;line-height:1.65;margin-bottom:1.25rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.tag{background:rgba(121,40,202,.15);border:1px solid rgba(121,40,202,.3);color:#b97bff;padding:.2rem .7rem;border-radius:6px;font-size:.75rem;font-family:'Fira Code',monospace}
+.proj-link{color:var(--cyan);text-decoration:none;font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.4rem;transition:.2s}
+.proj-link:hover{gap:.7rem}
+/* CERTIFICATIONS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.cert-card{border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.cert-rhcsa-card{background:linear-gradient(135deg,rgba(238,0,0,.15),rgba(238,0,0,.05));border:1px solid rgba(238,0,0,.3)}
+.cert-ccna-card{background:linear-gradient(135deg,rgba(27,160,215,.15),rgba(27,160,215,.05));border:1px solid rgba(27,160,215,.3)}
+.cert-intern-card{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(121,40,202,.1));border:1px solid rgba(0,212,255,.2)}
+.cert-card h3{font-size:1.15rem;font-weight:800;margin-bottom:.5rem}
+.cert-card p{color:var(--gray);font-size:.87rem;line-height:1.6}
+.cert-badge{font-size:2.5rem;margin-bottom:1rem;display:block}
+/* CONTACT */
+#contact{background:var(--bg2)}
+.contact-inner{text-align:center;max-width:600px;margin:0 auto}
+.contact-inner p{color:var(--gray);margin-bottom:2.5rem;line-height:1.7}
+.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.contact-card{display:flex;align-items:center;gap:.75rem;padding:1rem 2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;text-decoration:none;color:var(--white);transition:.3s;font-weight:600}
+.contact-card:hover{border-color:var(--cyan);background:rgba(0,212,255,.08);transform:translateY(-3px)}
+/* FOOTER */
+footer{text-align:center;padding:2rem;color:var(--gray);font-size:.85rem;border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<nav>
+  <div class="logo">&gt; bhanu@sec:~$</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certs</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <div class="hero-tag">🛡️ Open to Opportunities</div>
+    <h1>Bhanu Partap<br/><span class="grad">Singh Rana</span></h1>
+    <p>Cybersecurity Engineer & SOC Specialist building AI-powered defenses. Red Hat Certified System Administrator. CCNA Certified. Passionate about securing networks, one packet at a time.</p>
+    <div class="certs-row">
+      <div class="cert-pill cert-rhcsa">🎖️ RHCSA EX200 — Red Hat Certified</div>
+      <div class="cert-pill cert-ccna">🌐 CCNA — Cisco Certified</div>
+    </div>
+    <div class="btn-row">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="https://www.linkedin.com/in/bhanu-partap-singh-rana-/" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/BhanuPartapSinghRana" target="_blank" class="btn btn-outline">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-title">About <span class="accent">Me</span></p>
+        <p class="section-sub">Cybersecurity professional from India 🇮🇳</p>
+        <p>I specialize in network security, threat detection, and Security Operations Center (SOC) tooling. My flagship project <strong style="color:var(--cyan)">NetVision-SOC</strong> uses XGBoost ML models to classify network traffic in real-time — catching DDoS, brute-force, and more.</p>
+        <p>I hold a <strong style="color:#ff4444">Red Hat Certified System Administrator (RHCSA EX200)</strong> certification and am <strong style="color:#1ba0d7">CCNA</strong> certified, with hands-on internship experience at DigiSuraksha.</p>
+      </div>
+      <div class="code-block">
+<span class="kw">class</span> <span class="fn">BhanuPartapSinghRana</span>:<br/>
+&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span>(self):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;self.role = <span class="str">"Cybersecurity Engineer"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;self.certs = [<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"RHCSA EX200 🎖️"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"CCNA 🌐"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;self.focus = [<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"SOC & Threat Detection"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"ML for Security"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Network Defense"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Ethical Hacking"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">motto</span>(self):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Empowering defense with AI 🛡️"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-title">Technical <span class="accent">Arsenal</span></p>
+    <p class="section-sub">Tools, technologies and domains I work with</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <h3>Python</h3>
+        <p>Primary language for security tooling, ML pipelines, automation & SOC dashboards</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <h3>ML for Security</h3>
+        <p>XGBoost, RandomForest, scikit-learn — trained on CICDDoS2019 for threat classification</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>Network Security</h3>
+        <p>Packet analysis, flow-based detection, Wireshark, CCNA-level networking fundamentals</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎩</div>
+        <h3>Red Hat Linux</h3>
+        <p>RHCSA EX200 certified — system administration, SELinux, storage, networking on RHEL</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🖥️</div>
+        <h3>SOC Operations</h3>
+        <p>Threat intelligence, alert triage, IP reputation checks via AbuseIPDB integration</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☕</div>
+        <h3>Java</h3>
+        <p>OOP fundamentals — ATM interface simulation, number guessing game & console apps</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-title">Featured <span class="accent">Projects</span></p>
+    <p class="section-sub">Things I've built in the cybersecurity space</p>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>🌐 NetVision-SOC</h3>
+          <span class="stars">⭐ 6</span>
+        </div>
+        <p>Professional-grade SOC dashboard with real-time ML-powered threat detection. Features live packet capture, XGBoost/RandomForest classification, AbuseIPDB integration, and a premium dark glassmorphism UI.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">XGBoost</span><span class="tag">Plotly</span><span class="tag">ML</span>
+        </div>
+        <a href="https://github.com/BhanuPartapSinghRana/NetVision-SOC" target="_blank" class="proj-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>🔐 SecureSuiteX</h3>
+          <span class="stars">⭐ 3</span>
+        </div>
+        <p>Comprehensive security toolkit suite for penetration testing and security assessments. A multi-tool collection for ethical hacking workflows.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Pen Testing</span><span class="tag">Security</span>
+        </div>
+        <a href="https://github.com/BhanuPartapSinghRana/SecureSuiteX" target="_blank" class="proj-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>⌨️ Keylogger</h3>
+          <span class="stars">Research</span>
+        </div>
+        <p>Advanced keylogger implementation for ethical security research and educational purposes. Built to understand attack vectors and improve defensive strategies.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Ethical Hacking</span><span class="tag">Research</span>
+        </div>
+        <a href="https://github.com/BhanuPartapSinghRana/Keylogger" target="_blank" class="proj-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>🔌 Digisuraksha USB-KeyLogger</h3>
+          <span class="stars">Internship</span>
+        </div>
+        <p>USB-based keylogger project developed during the DigiSuraksha cybersecurity internship. Explores hardware-based attack surfaces.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">HTML</span><span class="tag">Hardware Security</span>
+        </div>
+        <a href="https://github.com/BhanuPartapSinghRana/Digisuraksha_USB-KeyLogger" target="_blank" class="proj-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>📚 Cybersecurity Internship</h3>
+          <span class="stars">DigiSuraksha</span>
+        </div>
+        <p>Collection of projects and tasks completed during the cybersecurity internship at DigiSuraksha — covering real-world security challenges.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Security</span><span class="tag">Internship</span>
+        </div>
+        <a href="https://github.com/BhanuPartapSinghRana/Cybersecurity_Internship_Digisuraksha" target="_blank" class="proj-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>💳 CodSoft ATM Interface</h3>
+          <span class="stars">Java</span>
+        </div>
+        <p>Fully functional ATM simulation with a console UI built in Java. Demonstrates OOP principles, transaction logic, and input validation.</p>
+        <div class="tag-row">
+          <span class="tag">Java</span><span class="tag">OOP</span><span class="tag">CodSoft</span>
+        </div>
+        <a href="https://github.com/BhanuPartapSinghRana/CodSoft_ATM-INTERFACE" target="_blank" class="proj-link">View on GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <p class="section-title">Certifications <span class="accent">& Training</span></p>
+    <p class="section-sub">Credentials that validate my expertise</p>
+    <div class="certs-grid">
+      <div class="cert-card cert-rhcsa-card">
+        <span class="cert-badge">🎖️</span>
+        <h3 style="color:#ff4444">RHCSA EX200</h3>
+        <p>Red Hat Certified System Administrator — Linux system administration, storage management, SELinux, network configuration on RHEL.</p>
+      </div>
+      <div class="cert-card cert-ccna-card">
+        <span class="cert-badge">🌐</span>
+        <h3 style="color:#1ba0d7">Cisco CCNA</h3>
+        <p>Cisco Certified Network Associate — routing, switching, IP addressing, VLANs, WAN technologies and network fundamentals.</p>
+      </div>
+      <div class="cert-card cert-intern-card">
+        <span class="cert-badge">🏢</span>
+        <h3 style="color:var(--cyan)">DigiSuraksha Internship</h3>
+        <p>Cybersecurity internship covering real-world ethical hacking, digital forensics, USB attack vectors, and security tooling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <p class="section-title">Let's <span class="accent">Connect</span></p>
+      <p>I'm open to cybersecurity roles, collaborations, and interesting projects. Feel free to reach out!</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/bhanu-partap-singh-rana-/" target="_blank" class="contact-card">
+          <span>💼</span> LinkedIn
+        </a>
+        <a href="https://github.com/BhanuPartapSinghRana" target="_blank" class="contact-card">
+          <span>🐙</span> GitHub
+        </a>
+        <a href="mailto:bhanupartapsinghrana57@gmail.com" class="contact-card">
+          <span>📧</span> Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built with ❤️ by <strong style="color:var(--cyan)">Bhanu Partap Singh Rana</strong> &nbsp;•&nbsp; Cybersecurity Engineer &nbsp;•&nbsp; 🛡️ Empowering Network Defense with AI</p>
+</footer>
+
+<script>
+// Matrix rain
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; drops = Array(Math.floor(canvas.width/16)).fill(1); });
+const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモ';
+let drops = Array(Math.floor(canvas.width/16)).fill(1);
+function draw() {
+  ctx.fillStyle = 'rgba(10,10,15,0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00d4ff';
+  ctx.font = '14px Fira Code';
+  drops.forEach((y, i) => {
+    ctx.fillStyle = i % 3 === 0 ? '#7928ca' : '#00d4ff';
+    ctx.fillText(chars[Math.floor(Math.random()*chars.length)], i*16, y*16);
+    if (y*16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  });
+}
+setInterval(draw, 50);
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.skill-card,.project-card,.cert-card').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(30px)'; el.style.transition='all 0.5s ease';
+  observer.observe(el);
+});
+
+// Typing effect in hero tag
+const roles = ['Cybersecurity Engineer 🔐','SOC Specialist 🛡️','RHCSA Certified 🎖️','CCNA Certified 🌐','ML Security Developer 🤖'];
+let ri=0, ci=0, typing=true;
+const tagEl = document.querySelector('.hero-tag');
+setInterval(()=>{
+  if(typing){
+    tagEl.textContent = roles[ri].slice(0,++ci);
+    if(ci===roles[ri].length){ typing=false; setTimeout(()=>{ typing=false; },1500); }
+  } else {
+    tagEl.textContent = roles[ri].slice(0,--ci);
+    if(ci===0){ typing=true; ri=(ri+1)%roles.length; }
+  }
+}, 80);
+</script>
+</body>
+</html>
