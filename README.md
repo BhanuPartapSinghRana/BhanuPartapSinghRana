@@ -1,11 +1,11 @@
 <div align="center">
 
 <!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00d4ff,100:7928ca&height=200&section=header&text=Bhanu%20Partap%20Singh%20Rana&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Cybersecurity%20Engineer%20%7C%20SOC%20Specialist%20%7C%20AI%20Security%20Developer&descAlignY=62&descSize=16" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00d4ff,100:7928ca&height=200&section=header&text=Bhanu%20Partap%20Singh%20Rana&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Cybersecurity%20Engineer%20%7C%20Developer%20%7C%20RHCSA%20Certified&descAlignY=62&descSize=16" width="100%"/>
 
 <!-- Typing Animation -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D4FF&center=true&vCenter=true&random=false&width=700&lines=Cybersecurity+Engineer+%F0%9F%94%90;RHCSA+Certified+%7C+Red+Hat+EX200+%F0%9F%8E%96%EF%B8%8F;SOC+%26+Threat+Intelligence+Specialist+%F0%9F%9B%A1%EF%B8%8F;ML-Powered+Security+Developer+%F0%9F%A4%96;Network+Defense+%26+CCNA+Certified+%F0%9F%8C%90;Always+learning%2C+always+defending...+%E2%9A%94%EF%B8%8F" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D4FF&center=true&vCenter=true&random=false&width=700&lines=Cybersecurity+Engineer+%F0%9F%94%90;RHCSA+Certified+%7C+Red+Hat+EX200+%F0%9F%8E%96%EF%B8%8F;Python+Developer+%F0%9F%90%8D;ML+%26+AI+Developer+%F0%9F%A4%96;Ethical+Hacker+%F0%9F%92%BB;Java+Developer+%E2%98%95" alt="Typing SVG" />
 </a>
 
 <br/>
@@ -34,14 +34,14 @@
 ```python
 class BhanuPartapSinghRana:
     def __init__(self):
-        self.name       = "Bhanu Partap Singh Rana"
-        self.role       = "Cybersecurity Engineer & SOC Specialist"
-        self.focus      = ["Network Security", "Threat Detection", "ML for Security", "Ethical Hacking"]
-        self.certifications = ["RHCSA EX200 (Red Hat Certified Sysadmin)", "CCNA", "Cybersecurity Internship @ DigiSuraksha"]
-        self.motto      = "Empowering Network Defense with AI 🛡️"
+        self.name           = "Bhanu Partap Singh Rana"
+        self.role           = "Cybersecurity Engineer & Developer"
+        self.skills         = ["Python", "Java", "Cybersecurity", "ML/AI", "Linux Admin"]
+        self.certifications = ["RHCSA EX200 (Red Hat Certified Sysadmin)", "CCNA", "DigiSuraksha Internship"]
+        self.motto          = "Building. Breaking. Securing. 🛡️"
 
     def greet(self):
-        return "Building the future of security — one packet at a time 🌐"
+        return "Always learning, always building — one project at a time 🚀"
 
 me = BhanuPartapSinghRana()
 print(me.greet())
@@ -123,49 +123,16 @@ print(me.greet())
 
 </div>
 
----
 
-## 🌐 NetVision-SOC — Flagship Project
-
-<div align="center">
-
-> *"A professional-grade Security Operations Center dashboard — built for those who never sleep on threats."*
-
-</div>
-
-```
-┌─────────────────────────────────────────────────────────┐
-│              🌐 NetVision SOC Architecture               │
-├─────────────────────────────────────────────────────────┤
-│  [Live Packets] ──► [Flow Extractor] ──► [ML Engine]    │
-│                                              │           │
-│                                         [XGBoost]       │
-│                                              │           │
-│                                    [Threat Classifier]  │
-│                                              │           │
-│         [AbuseIPDB API] ◄──── [Alert Engine] ──►[UI]   │
-│                                                          │
-│  🎨 Dark Mode • Glassmorphism • Real-time Dashboard     │
-└─────────────────────────────────────────────────────────┘
-```
-
-**Highlights:**
-- 🔴 **Real-time** packet capture & analysis
-- 🤖 **XGBoost/RandomForest** ML threat classification (CICDDoS2019 dataset)
-- 🌍 **AbuseIPDB** integration for IP reputation checks
-- 📊 **20+ network features** extracted per flow
-- 🎨 **Premium dark UI** with glassmorphism effects
-
----
 
 ## 🎯 Currently Working On
 
 ```
-🔭 Expanding NetVision-SOC with advanced anomaly detection
-🌱 Deep-diving into cloud security & AWS security practices
-📡 Enhancing network forensics capabilities
-🧠 Exploring LLMs for automated threat analysis
-🏆 Pursuing advanced certifications in cybersecurity
+🔭 Building more Python tools for automation & security
+🌱 Exploring cloud platforms (AWS, Azure) and DevSecOps
+🤖 Diving deeper into ML/AI-powered applications
+🧠 Researching LLMs for cybersecurity use cases
+🏆 Levelling up skills across the full stack
 ```
 
 ---
@@ -184,9 +151,9 @@ print(me.greet())
 
 <br/><br/>
 
-> 💬 *"Security is not a product, but a process."* — Bruce Schneier
+> 💬 *"An investment in knowledge pays the best interest."* — Benjamin Franklin
 >
-> 🛡️ *Empowering Network Defense with AI*
+> 🛡️ *Building. Breaking. Securing.*
 
 <br/>
 
